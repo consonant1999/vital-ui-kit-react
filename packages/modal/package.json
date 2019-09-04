@@ -17,6 +17,7 @@
   "dependencies": {
     "@vital-ui/react-theme": "^0.10.5",
     "@vital-ui/react-utils": "^0.10.5",
+    "astroturf": "^0.9.14",
     "classnames": "^2.2.6",
     "react-resize-detector": "^3.4.0"
   },

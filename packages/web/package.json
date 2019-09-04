@@ -39,7 +39,8 @@
     "@vital-ui/react-tabs": "^0.10.5",
     "@vital-ui/react-theme": "^0.10.5",
     "@vital-ui/react-tooltip": "^0.10.5",
-    "@vital-ui/react-utils": "^0.10.5"
+    "@vital-ui/react-utils": "^0.10.5",
+    "astroturf": "^0.9.14"
   },
   "peerDependencies": {
     "react": "^16",

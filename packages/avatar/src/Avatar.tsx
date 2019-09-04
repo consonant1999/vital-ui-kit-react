@@ -12,6 +12,7 @@ import { superBoxStyle, BoxProps } from '@vital-ui/react-utils';
 import { AvatarBadge } from './AvatarBadge';
 import { BuiltinTheme, AvatarSize } from './constants';
 import { defaultAvatarSets } from './default-avatar';
+import { css as astCss } from 'astroturf';
 
 type SizeStyleProps = {
   size: AvatarSize | number;
@@ -40,6 +41,14 @@ const sizeStyle = css<SizeStyleProps>`
       ? '50%'
       : getBuiltInOrTheme(builtinTheme, theme)[size].borderRadius;
   }};
+`;
+
+const styles = astCss`
+  .button {
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+  }
 `;
 
 const Root = styled.div<BoxProps & { circle?: boolean }>`
@@ -153,13 +162,16 @@ export class Avatar extends React.Component<AvatarProps> {
             style={imageStyle}
           />
         ) : (
-          <ImageWrapper
-            className={cn('vital__avatar-image-wrapper')}
-            size={size}
-            circle={circle}
-          >
-            {this.renderDefaultAvatar()}
-          </ImageWrapper>
+          <>
+            <button className={styles.button}>TestBtn</button>
+            <ImageWrapper
+              className={cn('vital__avatar-image-wrapper')}
+              size={size}
+              circle={circle}
+            >
+              {this.renderDefaultAvatar()}
+            </ImageWrapper>
+          </>
         )}
         {this.renderBadge()}
       </Root>
